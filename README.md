@@ -1,34 +1,21 @@
-# Mon site personnel – Portfolio CV
-
-Ce projet est une **page web personnelle** qui sert à présenter mon parcours, mes compétences et à offrir un moyen de contact. Elle a été conçue avec **HTML, CSS et JavaScript purs** (sans framework externe).
-🌐 Voir le site en direct : https://HosniNheri1.github.io/Portfolio-CV/ 
-
-## ✨ Fonctionnalités
-
-- **Navigation par onglets** : les sections `Infos personnelles`, `Diplômes`, `Contact` et `Localisation` s’affichent dynamiquement dans un iframe.
-- **Présentation visuelle** : photo de profil, coordonnées (nom, date de naissance, adresse, email, téléphone).
-- **Tableau des diplômes** : liste de mes certifications (Bac, Diplôme préparatoire, certifications Google Cloud et CCNA).
-- **Formulaire de contact** : champs nom, email, message (interface simple, à connecter à un backend).
-- **Carte intégrée** : localisation de l’ENET'Com Sfax (Technopole) via Google Maps.
-
-## 🛠️ Technologies utilisées
-
-- HTML5
-- CSS3 (mise en page, couleurs, tableaux, formulaires)
-- JavaScript (chargement dynamique du contenu dans l’iframe, gestion des clics)
-- Google Maps Embed API
-
-## 📁 Structure
-
-- Une seule page HTML (`index.html`) avec tout le code intégré.
-- Contenu des sections injecté via `srcdoc` pour l’iframe.
-
-## 🚀 Objectif
-
-Ce site me permet de regrouper mes informations professionnelles et académiques dans un format accessible en ligne, facile à partager avec des recruteurs ou dans le cadre de mes projets.
-
-> ⚠️ Le formulaire de contact actuel n’est pas relié à un backend (affichage uniquement). Pour le rendre fonctionnel, il faudrait ajouter un script côté serveur (PHP, Node.js, ou un service comme Formspree).
-
----
-
-*Auteur : Hosni Nheri – Mis à jour en 2025.*
+Personal Portfolio & CV Website
+A personal portfolio website designed to showcase my academic background, technical skills, and professional journey, while providing an easy way to get in touch. Built entirely with pure HTML, CSS, and JavaScript — no external frameworks.
+🌐 Live demo: https://HosniNheri1.github.io/Portfolio-CV/
+✨ Features
+Tab-based navigation — sections (Personal Info, Education, Contact, Location) load dynamically within an iframe
+Professional presentation — profile photo and personal details (name, date of birth, address, email, phone)
+Education & certifications table — academic degrees (High School Diploma, Preparatory Cycle) and professional certifications (Google Cloud, CCNA)
+Contact form — name, email, and message fields (front-end only, ready to be connected to a backend)
+Embedded map — location of ENET'Com Sfax (Technopole) via Google Maps Embed API
+🛠️ Technologies
+HTML5 — semantic structure
+CSS3 — layout, styling, tables, and forms
+JavaScript — dynamic content injection via srcdoc, tab navigation
+Google Maps Embed API — interactive location display
+📁 Project Structure
+Single-page application: all code contained in one index.html file
+Section content dynamically injected into the iframe using srcdoc
+🚀 Purpose
+This site consolidates my professional and academic information into a single, easily shareable online format — ideal for recruiters, internship applications (PFE), and academic projects.
+⚠️ Note: The contact form is currently front-end only (no backend). To make it fully functional, it can be connected to a server-side script (PHP, Node.js) or a form-handling service such as Formspree.
+Author: Hosni Nheri · Last updated: 2026
