@@ -1,7 +1,7 @@
 # Mon site personnel – Portfolio CV
 
 Ce projet est une **page web personnelle** qui sert à présenter mon parcours, mes compétences et à offrir un moyen de contact. Elle a été conçue avec **HTML, CSS et JavaScript purs** (sans framework externe).
-🌐 Voir le site en direct :https://HosniNheri1.github.io/Portfolio-CV/ 
+🌐 Voir le site en direct : https://HosniNheri1.github.io/Portfolio-CV/ 
 
 ## ✨ Fonctionnalités
 
