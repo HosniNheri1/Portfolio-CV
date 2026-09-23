@@ -1,218 +1,411 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://png.pngtree.com/png-clipart/20210514/ourmid/pngtree-h-logo-gold-gamming-png-image-png-image_3289232.jpg" type="image/x-icon" rel="icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hosni Nheri — Telecommunications Engineer</title>
+<meta name="description" content="Hosni Nheri — Telecommunications engineering student, agentic AI, DevOps, cybersecurity and networking. Seeking an end-of-studies internship (PFE).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#10171b;
+    --panel:#161f24;
+    --panel-line:#26333a;
+    --ink:#e9ece9;
+    --ink-dim:#93a5a3;
+    --ink-faint:#5b6c6b;
+    --amber:#e8a33d;
+    --teal:#54d8ba;
+    --serif-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --sans: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+    --maxw: 880px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:70px;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--amber); color:#10171b;}
 
-  <title>Mon Site Personnel</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f6f8;
-    }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
 
-    
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
+  /* NAV */
+  .topbar{
+    position:sticky; top:0; z-index:10;
+    background:rgba(16,23,27,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--panel-line);
+  }
+  .topbar-inner{
+    max-width:var(--maxw); margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand{
+    font-family:var(--mono); font-size:14px; color:var(--ink);
+    text-decoration:none; letter-spacing:0.02em;
+  }
+  .brand b{color:var(--amber); font-weight:500;}
+  nav.links{display:flex; gap:22px; font-size:14px;}
+  nav.links a{text-decoration:none; color:var(--ink-dim); transition:color .15s;}
+  nav.links a:hover{color:var(--teal);}
+  .status-pill{
+    font-family:var(--mono); font-size:12px; color:var(--teal);
+    border:1px solid #2a4a41; background:#132420; padding:5px 10px;
+    border-radius:3px; display:flex; align-items:center; gap:6px; white-space:nowrap;
+  }
+  .status-dot{width:6px; height:6px; border-radius:50%; background:var(--teal); box-shadow:0 0 6px var(--teal);}
+  .menu-toggle{display:none;}
 
-    nav {
-      margin-top: 10px;
-    }
+  /* HERO */
+  .hero{padding:72px 0 56px; border-bottom:1px solid var(--panel-line);}
+  .hero-grid{display:flex; gap:36px; align-items:flex-start;}
+  .avatar{
+    flex:none; width:128px; height:128px; border-radius:50%;
+    border:2px solid var(--amber); object-fit:cover;
+    box-shadow:0 0 0 6px rgba(232,163,61,0.08), 0 8px 24px rgba(0,0,0,0.45);
+    opacity:0; animation:pop .5s ease-out .1s forwards;
+  }
+  @keyframes pop{from{opacity:0; transform:scale(.9);} to{opacity:1; transform:scale(1);}}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
+  .hero-text{opacity:0; animation:rise .55s ease-out .2s forwards;}
+  @keyframes rise{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+  h1.name{
+    font-family:var(--serif-display); font-weight:700; font-size:clamp(32px,5vw,44px);
+    margin:0 0 6px; letter-spacing:-0.01em;
+  }
+  .role{
+    font-family:var(--mono); font-size:14px; color:var(--teal); margin:0 0 18px;
+  }
+  .summary{max-width:60ch; color:var(--ink-dim); font-size:15.5px; margin:0 0 22px;}
 
-    
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      background-color: white;
-    }
+  .contact-row{display:flex; flex-wrap:wrap; gap:10px 18px; font-size:14px;}
+  .contact-row a, .contact-row span{
+    display:flex; align-items:center; gap:7px; text-decoration:none; color:var(--ink);
+    border-bottom:1px solid transparent;
+  }
+  .contact-row a:hover{border-color:var(--amber); color:var(--amber);}
+  .contact-row svg{width:14px; height:14px; flex:none; stroke:var(--ink-faint);}
+  .contact-row a:hover svg{stroke:var(--amber);}
 
-    
-    footer {
-      background-color: #0b80f5;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-    }
-    /* ==============================
-   📱 ADAPTATION MOBILE (≤600px)
-   ============================== */
-@media (max-width: 600px) {
+  /* SECTION HEADERS */
+  section{padding:56px 0; border-bottom:1px solid var(--panel-line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:32px;}
+  h2.section-title{
+    font-family:var(--serif-display); font-weight:600; font-size:24px; margin:0;
+  }
+  .section-count{font-family:var(--mono); font-size:12px; color:var(--ink-faint);}
 
-  /* --- Header --- */
-  .header-inner {
-    flex-wrap: wrap;
+  /* TIMELINE */
+  .timeline{position:relative; padding-left:28px;}
+  .timeline::before{
+    content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1.5px;
+    background:linear-gradient(var(--teal), var(--panel-line) 85%);
+  }
+  .t-item{position:relative; padding-bottom:34px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:""; position:absolute; left:-28px; top:5px; width:9px; height:9px;
+    border-radius:50%; background:var(--bg); border:1.5px solid var(--teal);
+  }
+  .t-date{font-family:var(--mono); font-size:12.5px; color:var(--amber); margin-bottom:4px;}
+  .t-title{font-weight:600; font-size:16px; margin:0 0 2px;}
+  .t-org{font-size:14px; color:var(--ink-dim); margin:0 0 8px;}
+  .t-desc{font-size:14.5px; color:var(--ink-dim); margin:0; max-width:64ch;}
+
+  /* PROJECTS */
+  .projects{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .project{
+    position:relative; padding:20px; border:1px solid var(--panel-line);
+    background:var(--panel);
+  }
+  .project::before, .project::after{
+    content:""; position:absolute; width:9px; height:9px; border-color:var(--amber); border-style:solid; opacity:.7;
+  }
+  .project::before{top:-1px; left:-1px; border-width:1.5px 0 0 1.5px;}
+  .project::after{bottom:-1px; right:-1px; border-width:0 1.5px 1.5px 0;}
+  .project.full{grid-column:1 / -1;}
+  .p-date{font-family:var(--mono); font-size:11.5px; color:var(--ink-faint); margin-bottom:8px;}
+  .p-title{font-weight:600; font-size:15.5px; margin:0 0 3px;}
+  .p-stack{font-family:var(--mono); font-size:11.5px; color:var(--teal); margin:0 0 10px;}
+  .p-desc{font-size:14px; color:var(--ink-dim); margin:0;}
+
+  /* SKILLS */
+  .skills-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  .skill-col h3{
+    font-family:var(--mono); font-size:12px; font-weight:500; color:var(--ink-faint);
+    margin:0 0 12px; text-transform:none; border-bottom:1px solid var(--panel-line); padding-bottom:8px;
+  }
+  .skill-col ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px;}
+  .skill-col li{font-size:14.5px;}
+
+  /* CERTS + LANGUAGES */
+  .cert-lang-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:40px;}
+  .cert-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px;}
+  .cert-list li{padding-left:16px; border-left:1.5px solid var(--panel-line); position:relative;}
+  .cert-name{font-weight:500; font-size:14.5px;}
+  .cert-meta{font-family:var(--mono); font-size:12px; color:var(--ink-faint); margin-top:2px;}
+  .lang-list{display:flex; flex-direction:column; gap:16px;}
+  .lang-row-label{display:flex; justify-content:space-between; font-size:14px; margin-bottom:6px;}
+  .lang-row-label span:last-child{color:var(--ink-faint); font-family:var(--mono); font-size:12px;}
+  .bar-track{height:5px; background:var(--panel-line); border-radius:3px; overflow:hidden;}
+  .bar-fill{height:100%; background:linear-gradient(90deg,var(--teal),var(--amber)); border-radius:3px;}
+
+  /* FOOTER / CONTACT */
+  footer{padding:64px 0 48px;}
+  .cta-title{
+    font-family:var(--serif-display); font-weight:700; font-size:clamp(26px,4vw,36px);
+    margin:0 0 14px; max-width:16ch;
+  }
+  .cta-sub{color:var(--ink-dim); font-size:15px; margin:0 0 26px; max-width:52ch;}
+  .cta-actions{display:flex; flex-wrap:wrap; gap:12px;}
+  .btn{
+    font-family:var(--mono); font-size:13.5px; text-decoration:none; padding:11px 18px;
+    border-radius:3px; display:inline-flex; align-items:center; gap:8px; transition:.15s;
+  }
+  .btn-primary{background:var(--amber); color:#161005; font-weight:500;}
+  .btn-primary:hover{background:#f3b458;}
+  .btn-ghost{border:1px solid var(--panel-line); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--teal); color:var(--teal);}
+  .foot-bottom{
+    margin-top:56px; padding-top:20px; border-top:1px solid var(--panel-line);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+    font-size:12.5px; color:var(--ink-faint); font-family:var(--mono);
   }
 
-  .nav {
-    position: absolute;
-    top: 70px;
-    right: 10px;
-    background: var(--color-light);
-    width: 180px;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    transform: translateX(120%);
-    transition: transform var(--transition);
+  @media (max-width: 720px){
+    nav.links{display:none;}
+    .hero-grid{gap:20px;}
+    .avatar{width:96px; height:96px;}
+    .projects{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr 1fr; row-gap:20px;}
+    .cert-lang-grid{grid-template-columns:1fr; gap:32px;}
+    .foot-bottom{flex-direction:column;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .avatar, .hero-text{animation:none; opacity:1;}
+    html{scroll-behavior:auto;}
   }
 
-  .nav.open {
-    transform: translateX(0);
+  @media print{
+    .topbar{position:static;}
+    body{background:#fff; color:#111;}
+    .status-pill, .btn, nav.links{display:none;}
+    section{border-color:#ddd;}
+    .avatar{border-color:#111; filter:grayscale(20%);}
   }
-
-  .nav a {
-    display: block;
-    padding: 1rem;
-    width: 100%;
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  /* --- Hero section --- */
-  .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-cta {
-    flex-direction: column;
-  }
-
-  .search-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  /* --- Grilles générales --- */
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  /* --- Footer --- */
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  </style>
+</style>
 </head>
 <body>
-  
-  <header>
-    <h1>Bienvenue sur mon site personnel</h1>
-    <nav>
-      <a href="#infos" onclick="charger('infos')">Infos personnelles</a>
-      <a href="#diplomes" onclick="charger('diplomes')">Diplômes</a>
-      <a href="#formulaire" onclick="charger('formulaire')">Contact</a>
-      <a href="#map" onclick="charger('map')">Localisation</a>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top"><b>HN</b> · Hosni Nheri</a>
+    <nav class="links">
+      <a href="#path">Path</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <div class="status-pill"><span class="status-dot"></span>Open to end-of-studies internship</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero" id="top">
+    <div class="hero-grid">
+      <img class="avatar" src="profile.jpg" alt="Hosni Nheri — photo de profil">
+      <div class="hero-text">
+        <h1 class="name">Hosni Nheri</h1>
+        <p class="role">Telecommunications engineering student — ENET'Com Sfax</p>
+        <p class="summary">
+          Final-year telecommunications engineering student with hands-on experience in agentic AI,
+          DevOps automation, penetration testing, cloud and network administration (CCNA certified).
+          Looking for an end-of-studies internship to contribute to real-world AI, cybersecurity or
+          telecom projects.
+        </p>
+        <div class="contact-row">
+          <a href="mailto:nherihosni286@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 6h18v12H3z"/><path d="m3 7 9 6 9-6"/></svg>
+            nherihosni286@gmail.com
+          </a>
+          <a href="tel:+21653506407">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 9 9 0 0 0 3 .48 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 9 9 0 0 0 .48 3 1 1 0 0 1-.25 1z"/></svg>
+            +216 53 506 407
+          </a>
+          <a href="https://linkedin.com/in/hosni-nheri" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2 2 0 0 1 4 0V17M12 12.5V17"/></svg>
+            linkedin.com/in/hosni-nheri
+          </a>
+          <a href="https://github.com/HosniNheri1" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            github.com/HosniNheri1
+          </a>
+          <span>Sfax, Tunisia</span>
+        </div>
+      </div>
+    </div>
   </header>
 
-  
-  <main>
-    <iframe id="zone" title="contenu"></iframe>
-  </main>
+  <section id="path">
+    <div class="section-head">
+      <h2 class="section-title">Path</h2>
+      <span class="section-count">05 milestones</span>
+    </div>
+    <div class="timeline">
+      <div class="t-item">
+        <p class="t-date">06/2026 – 07/2026</p>
+        <p class="t-title">Academic Intern — Agentic AI &amp; DevOps</p>
+        <p class="t-org">SMARTOVATE LTD · London, UK (remote)</p>
+        <p class="t-desc">Designed an autonomous DevOps agent for infrastructure management, as part of an agentic AI &amp; DevOps project.</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">06/2025 – 07/2025</p>
+        <p class="t-title">Mandatory Summer Intern — Network / Telecom Operations</p>
+        <p class="t-org">Tunisie Telecom · Kairouan, Tunisia</p>
+        <p class="t-desc">Completed a mandatory academic internship covering telecom network infrastructure, field operations with technicians, and service delivery (fixed, mobile, internet).</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">09/2024 – present</p>
+        <p class="t-title">Telecommunications Engineering Degree — 2nd year (in progress)</p>
+        <p class="t-org">National School of Electronics and Telecommunications of Sfax (ENET'Com)</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">09/2022 – 06/2024</p>
+        <p class="t-title">Preparatory Cycle, Engineering Studies — Math/Physics</p>
+        <p class="t-org">Preparatory Institute for Engineering Studies of Kairouan (IPEIK)</p>
+      </div>
+      <div class="t-item">
+        <p class="t-date">09/2021 – 06/2022</p>
+        <p class="t-title">Technological Baccalaureate — General Technology</p>
+        <p class="t-org">Kairouan High School, Tunisia</p>
+      </div>
+    </div>
+  </section>
 
-  
-  <footer>
-    © 2025 Hosni Nheri — Tous droits réservés | Email : nheri****@gmail.com
+  <section id="projects">
+    <div class="section-head">
+      <h2 class="section-title">Projects</h2>
+      <span class="section-count">03 highlights</span>
+    </div>
+    <div class="projects">
+      <div class="project full">
+        <p class="p-date">08/2026 – 09/2026</p>
+        <p class="p-title">Cybersecurity Audit &amp; Hardening — Electro Space (e-commerce)</p>
+        <p class="p-stack">Vulnerability assessment · Hardening strategy</p>
+        <p class="p-desc">
+          Performed security analysis and vulnerability assessment of the company's online store, producing detailed
+          reports on risk vectors and attack surfaces. Contributed to a global prevention and hardening strategy
+          (risk identification, threat prevention, strengthened protective measures). Improved the platform's
+          security posture, formally recognized by company leadership via an official attestation.
+        </p>
+      </div>
+      <div class="project">
+        <p class="p-date">03/2026 – 04/2026</p>
+        <p class="p-title">Multi-Generation Mobile Network Supervision (2G → 5G)</p>
+        <p class="p-stack">Power BI</p>
+        <p class="p-desc">Built an interactive dashboard to monitor and visualize mobile network performance across generations.</p>
+      </div>
+      <div class="project">
+        <p class="p-date">01/2026 – 04/2026</p>
+        <p class="p-title">ProtectMe</p>
+        <p class="p-stack">Python · IA embarquée</p>
+        <p class="p-desc">Developed a personal safety application with embedded artificial intelligence, as a final-year project.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-head">
+      <h2 class="section-title">Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-col">
+        <h3>Languages</h3>
+        <ul><li>Python</li><li>HTML / CSS</li><li>JavaScript / PHP</li></ul>
+      </div>
+      <div class="skill-col">
+        <h3>Cybersecurity</h3>
+        <ul><li>Wireshark</li><li>Burp Suite</li><li>Nmap</li></ul>
+      </div>
+      <div class="skill-col">
+        <h3>Networking</h3>
+        <ul><li>Cisco Packet Tracer</li><li>Network administration</li></ul>
+      </div>
+      <div class="skill-col">
+        <h3>Other</h3>
+        <ul><li>Power BI</li><li>Jupyter Notebook</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="section-head">
+      <h2 class="section-title">Certifications &amp; languages</h2>
+    </div>
+    <div class="cert-lang-grid">
+      <ul class="cert-list">
+        <li>
+          <p class="cert-name">Cybersecurity Contribution Attestation — Electro Space</p>
+          <p class="cert-meta">Security audit &amp; hardening of the e-commerce platform · 09/2026</p>
+        </li>
+        <li>
+          <p class="cert-name">CCNA — Switching, Routing, and Wireless Essentials</p>
+          <p class="cert-meta">Cisco Networking Academy · 05/2026</p>
+        </li>
+        <li>
+          <p class="cert-name">Ethical Hacker</p>
+          <p class="cert-meta">Cisco Networking Academy · 12/2025</p>
+        </li>
+        <li>
+          <p class="cert-name">Introduction to Networks</p>
+          <p class="cert-meta">Cisco Networking Academy · 05/2025</p>
+        </li>
+      </ul>
+      <div class="lang-list">
+        <div>
+          <div class="lang-row-label"><span>Arabic</span><span>native</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div>
+          <div class="lang-row-label"><span>French</span><span>proficient</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+        </div>
+        <div>
+          <div class="lang-row-label"><span>English</span><span>intermediate</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p class="cta-title">Let's talk about your project or internship opening</p>
+    <p class="cta-sub">Available for an end-of-studies internship in AI, cybersecurity, networking or telecom. Quick response by email or phone.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="mailto:nherihosni286@gmail.com">Send an email</a>
+      <a class="btn btn-ghost" href="tel:+21653506407">Call</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/hosni-nheri" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/HosniNheri1" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="foot-bottom">
+      <span>Hosni Nheri — Sfax, Tunisia</span>
+      <span>Updated 2026</span>
+    </div>
   </footer>
 
-  <script>
-    
-    const pages = {
-      infos: `
-        <html><body style="background-color:#e6f2ff; font-family:Arial; text-align:center;">
-          <h2>Informations personnelles</h2>
-          <img src="https://media.licdn.com/dms/image/v2/D4D03AQG2xB7Ai35RKA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730893512501?e=1763596800&v=beta&t=M8XoCnzDOmHcRj_JIKp1AIaE1ZCTB9K8BGAEsdM_fn0" alt="Photo de profil" style="border-radius:50%;width:150px;height:150px;margin-top:10px;">
-          <table style="margin:20px auto;border-collapse:collapse;">
-            <tr><td style="border:1px solid #004080;padding:8px 15px;"><b>Nom :</b></td><td style="border:1px solid #004080;padding:8px 15px;">Hosni Nheri</td></tr>
-            <tr><td style="border:1px solid #004080;padding:8px 15px;"><b>Date de naissance :</b></td><td style="border:1px solid #004080;padding:8px 15px;">0* Décembre 20**</td></tr>
-            <tr><td style="border:1px solid #004080;padding:8px 15px;"><b>Adresse :</b></td><td style="border:1px solid #004080;padding:8px 15px;">Kairouan Ville ,Tunisie</td></tr>
-            <tr><td style="border:1px solid #004080;padding:8px 15px;"><b>Email :</b></td><td style="border:1px solid #004080;padding:8px 15px;">nheri****@gmail.com</td></tr>
-            <tr><td style="border:1px solid #004080;padding:8px 15px;"><b>Téléphone :</b></td><td style="border:1px solid #004080;padding:8px 15px;">+216 53******</td></tr>
-          </table>
-        </body></html>
-      `,
-
-      diplomes: `
-        <html><body style="background-color:#f9f9f9; font-family:Arial; text-align:center;">
-          <h2>Mes diplômes et certificats</h2>
-          <table style="width:80%;margin:20px auto;border-collapse:collapse;">
-            <tr style="background-color:#004080;color:white;">
-              <th style="padding:10px;border:1px solid #666;">Année</th>
-              <th style="padding:10px;border:1px solid #666;">Diplôme / Certificat</th>
-              <th style="padding:10px;border:1px solid #666;">Établissement</th>
-            </tr>
-            <tr><td style="border:1px solid #666;padding:10px;">2022</td><td style="border:1px solid #666;padding:10px;">Baccalauréat Technologique</td><td style="border:1px solid #666;padding:10px;">Lycée Kairouan </td></tr>
-            <tr><td style="border:1px solid #666;padding:10px;">2024</td><td style="border:1px solid #666;padding:10px;">Diplome Préparatoire</td><td style="border:1px solid #666;padding:10px;">IPEIK</td></tr>
-            <tr><td style="border:1px solid #666;padding:10px;">2024</td><td style="border:1px solid #666;padding:10px;">Certification Innovating with Google Cloud IA </td><td style="border:1px solid #666;padding:10px;">ENET'COM</td></tr>
-            <tr><td style="border:1px solid #666;padding:10px;">2025</td><td style="border:1px solid #666;padding:10px;">Certification CCNA Introduction </td><td style="border:1px solid #666;padding:10px;">ENET'COM</td></tr>
-          </table>
-        </body></html>
-      `,
-
-      formulaire: `
-        <html><body style="background-color:#e8f5e9; font-family:Arial; text-align:center;">
-          <h2>Contactez-moi</h2>
-          <form style="display:inline-block;text-align:left;margin-top:20px;">
-            <label>Nom :</label><br>
-            <input type="text" name="nom" required style="width:250px;margin:5px 0;padding:8px;"><br>
-            <label>Email :</label><br>
-            <input type="email" name="email" required style="width:250px;margin:5px 0;padding:8px;"><br>
-            <label>Message :</label><br>
-            <textarea name="message" rows="4" style="width:250px;margin:5px 0;padding:8px;"></textarea><br>
-            <input type="submit" value="Envoyer" style="background-color:#004080;color:white;padding:8px 15px;border:none;border-radius:5px;cursor:pointer;">
-          </form>
-        </body></html>
-      `,
-
-      map: `
-        <html><body style="text-align:center;">
-          <h2>Ma localisation</h2>
-          <iframe width="80%" height="400" style="border:0;" loading="lazy" allowfullscreen
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.713816704669!2d10.755647349999998!3d34.83828730000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13002cd2cef7333d%3A0xaa3a1cf6d7fb55b0!2sEcole%20nationale%20d&#39;Electronique%20et%20des%20T%C3%A9l%C3%A9communications%20de%20Sfax%D8%8C%20Technopole%20Sfax%2C%20Route%20Tunis%20km%2011%2C%20cite%20Ons%2C%20Sfax!5e0!3m2!1sfr!2stn!4v1759997595931!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </body></html>
-      `
-    };
-
-    
-    function charger(page) {
-      const iframe = document.getElementById('zone');
-      iframe.srcdoc = pages[page];
-    }
-
-    window.onload = () => charger('infos');
-  </script>
+</div>
 </body>
 </html>
-
-
-
-
-
-
